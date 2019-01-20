@@ -17,9 +17,9 @@ global.db = require('./Config/database.js');
 global.middleware = require('./Middlewares/CommonMiddlewares');
 //force: true will drop the table
 // if it already exists
-// db.sequelize.sync({ force: true }).then(() => {
-//     console.log('Drop and Resync with { force: true }');
-// });
+db.sequelize.sync({ force: true }).then(() => {
+    console.log('Drop and Resync with { force: true }');
+});
 app.use(function(err, req, res, next) {
     // error handling logic
     res.send({
